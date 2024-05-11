@@ -24,8 +24,8 @@ This project is open to everyone. Anyone interested in developing, fixing bugs, 
 This project is licensed under the MIT License. For more information, see the [LICENSE](LICENSE) file.
 
 ### Contact:
-- Email: [email@example.com](mailto:email@example.com)
-- Twitter: [@example](https://twitter.com/example)
+- Email: [anka7365@gmail.com](mailto:anka7365@gmail.com)
+- Instagram: [@Beytullah.svs](https://instagram.com/Beytullah.svs)
 
 ---
 
@@ -55,5 +55,5 @@ Bu proje herkese açıktır. Geliştirme yapmak, hataları düzeltmek veya yeni 
 Bu proje MIT Lisansı altında lisanslanmıştır. Detaylı bilgi için [LİSANS](LICENSE) dosyasını inceleyebilirsiniz.
 
 ### İletişim:
-- E-posta: [email@example.com](mailto:email@example.com)
-- Twitter: [@example](https://twitter.com/example)
+- E-posta: [anka7365@gmail.com](mailto:anka7365@gmail.com)
+- Instagram: [@Beytullah.svs](https://instagram.com/Beytullah.svs)
