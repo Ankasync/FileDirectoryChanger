@@ -21,7 +21,18 @@ namespace FileDirectoryChanger
 
         private void gösterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this
+            this.Show();
+        }
+
+        private void gizleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void çýkýþToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeState = true;
+            Application.Exit();
         }
     }
 }

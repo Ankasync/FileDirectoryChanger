@@ -49,26 +49,28 @@
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { gösterToolStripMenuItem, gizleToolStripMenuItem, çıkışToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(181, 92);
+            contextMenuStrip1.Size = new Size(109, 70);
             // 
             // gösterToolStripMenuItem
             // 
             gösterToolStripMenuItem.Name = "gösterToolStripMenuItem";
-            gösterToolStripMenuItem.Size = new Size(180, 22);
+            gösterToolStripMenuItem.Size = new Size(108, 22);
             gösterToolStripMenuItem.Text = "Göster";
             gösterToolStripMenuItem.Click += gösterToolStripMenuItem_Click;
             // 
             // gizleToolStripMenuItem
             // 
             gizleToolStripMenuItem.Name = "gizleToolStripMenuItem";
-            gizleToolStripMenuItem.Size = new Size(180, 22);
+            gizleToolStripMenuItem.Size = new Size(108, 22);
             gizleToolStripMenuItem.Text = "Gizle";
+            gizleToolStripMenuItem.Click += gizleToolStripMenuItem_Click;
             // 
             // çıkışToolStripMenuItem
             // 
             çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            çıkışToolStripMenuItem.Size = new Size(180, 22);
+            çıkışToolStripMenuItem.Size = new Size(108, 22);
             çıkışToolStripMenuItem.Text = "Çıkış";
+            çıkışToolStripMenuItem.Click += çıkışToolStripMenuItem_Click;
             // 
             // Form1
             // 
