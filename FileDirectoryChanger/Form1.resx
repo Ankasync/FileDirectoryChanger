@@ -200,7 +200,28 @@
         /+Hwf//H+H//x/g//4/5D/+f+4P////B//8=
 </value>
   </data>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>286, 17</value>
-  </metadata>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAA
+        AAAAAAAA+KsAAPqtAAD6rQAA+60AAPirAAP7rQAl+60AgvutAHXwpgAD/K4AAPqsAAD7rQAA9qoAAAAA
+        AAAAAAAA9qoAAPyuAAD7rQAA+awAA/qtARP8rgB7+64AtfyvAuL8rgDx/K4AovutAE/5rAAP+60AAPqt
+        AQD6rQAAAAAAAPqtAAD7rQAA+q0AIPutAIL7rQCi/K4AzPutAKP9sAX8/K8C//yuAP/8rgD7+64Anvqt
+        ACL7rQAA8acBAPSpAAD5rAAA+awACvutAH77rQB7+60AifutAKH8rgHf/a8B//2vAP/9sAb//K8C//uu
+        AN37rQGi+q0AKvuuAAD8rwAA+q0AAPirAB/6rQBp/K4Axv2uAPX8rgD//rMM//2yCf/8rgD//rEH//2w
+        Bf/8rgD6+64B2/qtAHr2qgAF+awAAPqtABH6rQBx+64A0fyuAN/9sQf2/rMM//+1Ev/+sQf//a8B//+w
+        Af/9rwH//a8A//yuAO/8rgDb+60AWP2vAAD7rQBD+60AtPutAKj7rgOj/rYU+f+1Ev/+tA7//bAC5f2x
+        B93/tA7//7QP//6yCP/8rgD5+60A2PutAJT5rAAO+60AT/utAIP7rQC8/bEG/P+4Gf/+tA/u/bAGxv2v
+        A8f8rwVz/rUT5P+4Gv//thX//a8D//yuAPn7rQDI+q0AMvqsAEH7rQCQ+64A8/2xB//+tRPt/LAIZfqs
+        AB78rwPO+q0AjvquBTL9sw6J/rQP5P2wBP/8rgD++64A2PutAFr5rAAv+60AmvyuAPL8rwL+/LAFb/+/
+        IwD/txMn9KwMyemhAVbqowQA/+5+APutATH8rgG4/K4A/PyuAOb7rgBn+KsBD/utAHT8rgD//K4A6vut
+        ADD+sgoA/rQQRfuyD0fCgAAC4ZsAAPWoAAD7rgIA+KsAF/yuALL8rgDF+64AeP+8AAD7rQBu/K4A5Pyu
+        ALz6rQAQ+q0AAP6zCQH7sQ0A8qYAAPGmAAD3qgAA+64AAPuuAAD7rgBR+64AqfuuAFH5rQMG+awBJPut
+        AJv8rgCq/K4AC/utAAD+tAwA/7QNAP+0DgAAAAAAAAAAAPmtBQD7rQAA+60AOvutAGP6rQEP/7QLAPut
+        AAD7rQBK+60AgPutACv7rQAA/q8AAPmsAAAAAAAAAAAAAAAAAAD5rgYA/64AAPqsADf6rQAZ+q0AAP+0
+        CQD6rAAA+awAFvqsACH6rQBA+q0AE/OnAAD7rwUA/7QOAAAAAAAAAAAA/LAJAPuvBwL6rQMM/7gJAP6v
+        AAAAAAAA9qoBAPirAQL/sgAA+q0AC/msACb4rAEW/rMNAf6yCwAAAAAAAAAAAPmtBgD5rQQA+awCAPms
+        AAD4qwAAgAMAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAADg
+        AAAAYAAAgGAAAA==
+</value>
+  </data>
 </root>

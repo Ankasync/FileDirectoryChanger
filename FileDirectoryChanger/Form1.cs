@@ -1,21 +1,75 @@
+using GlobalHookExample;
 using Microsoft.Win32.TaskScheduler;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml;
-
 namespace FileDirectoryChanger
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
+        
         }
-        [DllImport("user32.dll")]
-        static extern short GetAsyncKeyState(System.Windows.Forms.Keys vKey);
+        string SourceFolder = "";
+        string DestinationFolder = "";
+        string tus = "";
+        Keys key;
+        globalKeyboardHook klavyeDinleyicisi = new globalKeyboardHook();
+
         bool closeState = false;
         bool showState = false;
+        void handleKeyPress(object sender, KeyEventArgs e)
+        {
+            //Yapýlmasýný istediðiniz kodlar burada yer alacak
+            //Burasý tuþa basýldýðý an çalýþýr
 
+            if (tus == null)
+            {
+                MessageBox.Show("Atanacak Tuþ Belirtilmedi Lütfen Configten Belirtiniz");
+                this.Show();
+            }
+            else if (e.KeyCode == key)
+            {
+
+                DirectoryInfo klasor = new DirectoryInfo(SourceFolder);
+                var dosyalar = klasor.GetFiles();
+
+                // Dosyalarý son deðiþtirilme tarihine göre sýrala
+                var siraliDosyalar = dosyalar.OrderByDescending(f => f.LastWriteTime);
+
+                // En son deðiþtirilen dosyayý al
+                var enSonDosya = siraliDosyalar.FirstOrDefault();
+                string hedefDosyaYolu = Path.Combine(DestinationFolder, enSonDosya.Name);
+                try
+                {
+                    File.Copy(enSonDosya.FullName, hedefDosyaYolu);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+
+                }
+                if (new FileInfo(hedefDosyaYolu).Length == enSonDosya.Length)
+                    MessageBox.Show("Directory Change SuccessFull");
+                else
+                {
+                    MessageBox.Show("Bir Sorun Oluþmuþ Olabilir Manuel Olarak Kontrol Etmenizi Tavsiye Ederiz");
+                }
+
+            }
+            else
+            {
+
+            }
+            e.Handled = false;
+        }
         private void Form1_Shown(object sender, EventArgs e)
         {
             if (!showState)
@@ -51,9 +105,26 @@ namespace FileDirectoryChanger
             closeState = true;
             Application.Exit();
         }
+        public void ConfigureHook()
+        {
+            klavyeDinleyicisi = new globalKeyboardHook();
+            XmlDocument oku = new XmlDocument();
+            oku.Load(Application.StartupPath + @"\Config.xml");
+            XmlNode tuþ = oku.GetElementsByTagName("Key")[0];
+            XmlNode SourceFolderNode = oku.GetElementsByTagName("SourceFolder")[0];
+            XmlNode DestinationFolderNode = oku.GetElementsByTagName("DestinationFolder")[0];
+            SourceFolder = SourceFolderNode.InnerText;
+            DestinationFolder = DestinationFolderNode.InnerText;
+            Enum.TryParse(tuþ.InnerText, out key);
+            klavyeDinleyicisi.HookedKeys.Add(key);
+            klavyeDinleyicisi.KeyUp += new KeyEventHandler(handleKeyPress);
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+            //basýldýktan sonra ikinci olarak burasý çalýþýr
+ 
             TaskService ts = new TaskService();
             TaskDefinition td = ts.NewTask();
             td.RegistrationInfo.Description = "Test Servis";
@@ -86,20 +157,20 @@ namespace FileDirectoryChanger
                 this.Show();
                 if (File.Exists(Application.StartupPath + @"\Config.xml"))
                 {
-                    timer1.Start();
+                    ConfigureHook();
 
                 }
 
             }
             else
             {
-                timer1.Start();
+                ConfigureHook();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (DestinationFolder.Text == "" || comboBox1.SelectedItem.ToString() == "")
+            if (DestinationFoldertxt.Text == "" || comboBox1.SelectedItem.ToString() == "")
             {
                 MessageBox.Show("Boþ Býrakýlamaz");
             }
@@ -123,11 +194,14 @@ namespace FileDirectoryChanger
 
 
                     Key.InnerText = key.ToString();
-                    DestinationFolder.InnerText = this.DestinationFolder.Text;
-                    SourceFolder.InnerText = this.SourceFolder.Text;
+                    DestinationFolder.InnerText = this.DestinationFoldertxt.Text;
+                    SourceFolder.InnerText = this.SourceFoldertxt.Text;
                     doc.Save(Application.StartupPath + @"\Config.xml");
+
+                    ConfigureHook();
+
                     this.Close();
-                    timer1.Start();
+            
                 }
                 catch (Exception ex)
                 {
@@ -136,62 +210,14 @@ namespace FileDirectoryChanger
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            XmlDocument oku = new XmlDocument();
-            oku.Load(Application.StartupPath + @"\Config.xml");
-            XmlNode tuþ = oku.GetElementsByTagName("Key")[0];
-            XmlNode SourceFolder = oku.GetElementsByTagName("SourceFolder")[0];
-            XmlNode DestinationFolder = oku.GetElementsByTagName("DestinationFolder")[0];
-            Keys key;
-            Enum.TryParse(tuþ.InnerText, out key);
-            if (tuþ.InnerText == null)
-            {
-                MessageBox.Show("Atanacak Tuþ Belirtilmedi Lütfen Configten Belirtiniz");
-            }
-            else
-            {
-
-                if (GetAsyncKeyState(key) == -32767)
-                {
-
-                    DirectoryInfo klasor = new DirectoryInfo(SourceFolder.InnerText);
-                    var dosyalar = klasor.GetFiles();
-
-                    // Dosyalarý son deðiþtirilme tarihine göre sýrala
-                    var siraliDosyalar = dosyalar.OrderByDescending(f => f.LastWriteTime);
-
-                    // En son deðiþtirilen dosyayý al
-                    var enSonDosya = siraliDosyalar.FirstOrDefault();
-                    string hedefDosyaYolu = Path.Combine(DestinationFolder.InnerText, enSonDosya.Name);
-                    try
-                    {
-                        File.Copy(enSonDosya.FullName, hedefDosyaYolu);
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                        return;
-                        
-                    }
-                    if(new FileInfo(hedefDosyaYolu).Length == enSonDosya.Length)
-                    MessageBox.Show("Directory Change SuccessFull");
-                    else
-                    {
-                        MessageBox.Show("Bir Sorun Oluþmuþ Olabilir Manuel Olarak Kontrol Etmenizi Tavsiye Ederiz");
-                    }
-                }
-
-            }
-        }
+     
 
         private void textBox2_DoubleClick(object sender, EventArgs e)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             dialog.ShowDialog();
             string directory = dialog.SelectedPath + @"\";
-            DestinationFolder.Text = directory;
+            DestinationFoldertxt.Text = directory;
         }
 
         private void textBox1_DoubleClick(object sender, EventArgs e)
@@ -199,7 +225,7 @@ namespace FileDirectoryChanger
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             dialog.ShowDialog();
             string directory = dialog.SelectedPath + @"\";
-            SourceFolder.Text = directory;
+            SourceFoldertxt.Text = directory;
         }
 
         private void label2_Click(object sender, EventArgs e)
