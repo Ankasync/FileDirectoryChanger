@@ -21,7 +21,7 @@ This project aims to solve a common problem encountered in web-based email clien
 This project is open to everyone. Anyone interested in developing, fixing bugs, or adding new features can contribute.
 
 ### License:
-This project is licensed under the MIT License. For more information, see the [LICENSE](LICENSE) file.
+
 
 ### Contact:
 - Email: [anka7365@gmail.com](mailto:anka7365@gmail.com)
@@ -52,7 +52,7 @@ Bu proje, Outlook gibi web tabanlı e-posta istemcilerinde sıkça karşılaşı
 Bu proje herkese açıktır. Geliştirme yapmak, hataları düzeltmek veya yeni özellikler eklemek isteyen herkes katkıda bulunabilir. 
 
 ### Lisans:
-Bu proje MIT Lisansı altında lisanslanmıştır. Detaylı bilgi için [LİSANS](LICENSE) dosyasını inceleyebilirsiniz.
+
 
 ### İletişim:
 - E-posta: [anka7365@gmail.com](mailto:anka7365@gmail.com)
