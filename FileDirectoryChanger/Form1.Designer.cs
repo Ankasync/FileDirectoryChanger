@@ -63,23 +63,23 @@
             // ShowToolStripMenuItem
             // 
             ShowToolStripMenuItem.Name = "ShowToolStripMenuItem";
-            ShowToolStripMenuItem.Size = new Size(180, 22);
+            ShowToolStripMenuItem.Size = new Size(103, 22);
             ShowToolStripMenuItem.Text = "Show";
-            ShowToolStripMenuItem.Click += gösterToolStripMenuItem_Click;
+            ShowToolStripMenuItem.Click += ShowToolStripMenuItem_Click;
             // 
             // HideToolStripMenuItem
             // 
             HideToolStripMenuItem.Name = "HideToolStripMenuItem";
-            HideToolStripMenuItem.Size = new Size(180, 22);
+            HideToolStripMenuItem.Size = new Size(103, 22);
             HideToolStripMenuItem.Text = "Hide";
-            HideToolStripMenuItem.Click += gizleToolStripMenuItem_Click;
+            HideToolStripMenuItem.Click += HideToolStripMenuItem_Click;
             // 
             // ExitToolStripMenuItem
             // 
             ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            ExitToolStripMenuItem.Size = new Size(180, 22);
+            ExitToolStripMenuItem.Size = new Size(103, 22);
             ExitToolStripMenuItem.Text = "Exit";
-            ExitToolStripMenuItem.Click += çıkışToolStripMenuItem_Click;
+            ExitToolStripMenuItem.Click += ExitToolStripMenuItem_Click;
             // 
             // tableLayoutPanel1
             // 
