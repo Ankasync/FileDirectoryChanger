@@ -32,9 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             notifyIcon1 = new NotifyIcon(components);
             contextMenuStrip1 = new ContextMenuStrip(components);
-            gösterToolStripMenuItem = new ToolStripMenuItem();
-            gizleToolStripMenuItem = new ToolStripMenuItem();
-            çıkışToolStripMenuItem = new ToolStripMenuItem();
+            ShowToolStripMenuItem = new ToolStripMenuItem();
+            HideToolStripMenuItem = new ToolStripMenuItem();
+            ExitToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1 = new TableLayoutPanel();
             label3 = new Label();
             SourceFoldertxt = new TextBox();
@@ -56,30 +56,30 @@
             // 
             // contextMenuStrip1
             // 
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { gösterToolStripMenuItem, gizleToolStripMenuItem, çıkışToolStripMenuItem });
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { ShowToolStripMenuItem, HideToolStripMenuItem, ExitToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(109, 70);
+            contextMenuStrip1.Size = new Size(104, 70);
             // 
-            // gösterToolStripMenuItem
+            // ShowToolStripMenuItem
             // 
-            gösterToolStripMenuItem.Name = "gösterToolStripMenuItem";
-            gösterToolStripMenuItem.Size = new Size(108, 22);
-            gösterToolStripMenuItem.Text = "Göster";
-            gösterToolStripMenuItem.Click += gösterToolStripMenuItem_Click;
+            ShowToolStripMenuItem.Name = "ShowToolStripMenuItem";
+            ShowToolStripMenuItem.Size = new Size(180, 22);
+            ShowToolStripMenuItem.Text = "Show";
+            ShowToolStripMenuItem.Click += gösterToolStripMenuItem_Click;
             // 
-            // gizleToolStripMenuItem
+            // HideToolStripMenuItem
             // 
-            gizleToolStripMenuItem.Name = "gizleToolStripMenuItem";
-            gizleToolStripMenuItem.Size = new Size(108, 22);
-            gizleToolStripMenuItem.Text = "Gizle";
-            gizleToolStripMenuItem.Click += gizleToolStripMenuItem_Click;
+            HideToolStripMenuItem.Name = "HideToolStripMenuItem";
+            HideToolStripMenuItem.Size = new Size(180, 22);
+            HideToolStripMenuItem.Text = "Hide";
+            HideToolStripMenuItem.Click += gizleToolStripMenuItem_Click;
             // 
-            // çıkışToolStripMenuItem
+            // ExitToolStripMenuItem
             // 
-            çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            çıkışToolStripMenuItem.Size = new Size(108, 22);
-            çıkışToolStripMenuItem.Text = "Çıkış";
-            çıkışToolStripMenuItem.Click += çıkışToolStripMenuItem_Click;
+            ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+            ExitToolStripMenuItem.Size = new Size(180, 22);
+            ExitToolStripMenuItem.Text = "Exit";
+            ExitToolStripMenuItem.Click += çıkışToolStripMenuItem_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -187,7 +187,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Form1";
-            Text = "Form1";
+            Text = "FileDirectoryChanger";
             FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             Shown += Form1_Shown;
@@ -201,9 +201,9 @@
 
         private NotifyIcon notifyIcon1;
         private ContextMenuStrip contextMenuStrip1;
-        private ToolStripMenuItem gösterToolStripMenuItem;
-        private ToolStripMenuItem gizleToolStripMenuItem;
-        private ToolStripMenuItem çıkışToolStripMenuItem;
+        private ToolStripMenuItem ShowToolStripMenuItem;
+        private ToolStripMenuItem HideToolStripMenuItem;
+        private ToolStripMenuItem ExitToolStripMenuItem;
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox DestinationFoldertxt;
         private Label label1;
